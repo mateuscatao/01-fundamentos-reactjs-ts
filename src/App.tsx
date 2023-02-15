@@ -1,12 +1,12 @@
 import { Header } from './components/Header';
-import { Post } from './components/Post';
+import { Post, PostProps } from './components/Post';
 import { Sidebar } from './components/Sidebar';
 
 import styles from './App.module.css'
 
 import './global.css';
 
-const posts = [
+const posts: PostProps[] = [
   {
     id: 1,
     author: {
@@ -49,6 +49,7 @@ export function App() {
           {posts.map(post => {
             return (
               <Post
+                id={post.id}
                 key={post.id}
                 author={post.author}
                 content={post.content}
